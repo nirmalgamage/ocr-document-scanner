@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c0d6e4"
+    tools:context=".CameraActivity">
+
+    <Button
+        android:id="@+id/camera_image_read"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Read"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/binarize_btn_cam"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Read" />
+
+    <ImageView
+        android:id="@+id/camera_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/camera_image_read"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/binarize_btn_cam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="binarizeBtn_cam"
+        android:text="Binarize"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rotate_btn_cam"
+        app:layout_constraintEnd_toStartOf="@+id/rotate_btn_cam"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toEndOf="@+id/camera_image_read" />
+
+    <Button
+        android:id="@+id/rotate_btn_cam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="36dp"
+        android:onClick="rotateBitmap_cam"
+        android:text="Rotate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/binarize_btn_cam" />
+
+
+</android.support.constraint.ConstraintLayout>

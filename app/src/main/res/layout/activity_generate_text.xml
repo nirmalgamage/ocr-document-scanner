@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenerateTextActivity">
+
+    <EditText
+        android:id="@+id/generated_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="9dp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:textSize="14sp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/savetopdf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <Button
+        android:id="@+id/savetopdf"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/generated_text"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="savePDF"
+        android:text="Save as PDF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generated_text" />
+
+    <Button
+        android:id="@+id/copy_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="copyText"
+        android:text="Copy"
+        app:layout_constraintStart_toStartOf="@+id/generated_text"
+        app:layout_constraintTop_toBottomOf="@+id/generated_text" />
+
+    <Button
+        android:id="@+id/append_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="appendNext"
+        android:text="Append"
+        app:layout_constraintBaseline_toBaselineOf="@+id/savetopdf"
+        app:layout_constraintStart_toEndOf="@+id/savetopdf" />
+
+    <Button
+        android:id="@+id/edit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="editText"
+        android:text="Edit"
+        app:layout_constraintBaseline_toBaselineOf="@+id/copy_btn"
+        app:layout_constraintStart_toEndOf="@+id/copy_btn" />
+
+</android.support.constraint.ConstraintLayout>
